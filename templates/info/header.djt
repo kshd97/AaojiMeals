@@ -1,0 +1,55 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aaoji</title>
+    <meta name="description" content="Aaoji Meals">
+    <meta name="keywords" content="home delivery, online order">
+    
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <!-- =======================================================
+        Theme Name: Aaoji Meals
+        Author: Kshitij Divekar
+    ======================================================= -->
+  </head>
+  <body>
+    <!--banner-->
+    <section id="banner">
+      <div class="bg-color">
+        <header id="header">
+            <div class="container">
+                <div id="mySidenav" class="sidenav">
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                  <a href="#about">About</a>
+                  <a href="{% url 'Login:signin' %}">Login/Register</a>
+                  <a href="#event">Event</a>
+                  <a href="#menu-list">Menu</a>
+                  <a href="#contact">Book a table</a>
+                </div>
+                <!-- Use any element to open the sidenav -->
+                <span onclick="openNav()" class="pull-right menu-icon">☰</span>
+            </div>
+        </header>
+        <div class="container">
+        <div class="row">
+          <div class="inner text-center">
+            <h1 class="logo-name">Delicious</h1>
+            <h2>Food To fit your lifestyle & health.</h2>
+            <p>Specialized in Indian Cuisine!!</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <!-- / banner -->
+    {% block content %}
+    {% endblock %}
+
+
+    {% block script %}
+    {% endblock %}
