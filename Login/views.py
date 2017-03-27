@@ -12,16 +12,19 @@ def signin(request):
 		password = request.POST['password']
 		user = authenticate(username=username,password=password)
 		if user == None:
-			return render(request,'Login/login.djt', {'error':'Invalid Username or Password'})
+			return render(request,'info/index.djt', {'error':'Invalid Username or Password'})
 		else:
 			login(request,user)
 			user = request.user
 			U = Customer.objects.get(user=user)
 			return render(request,'info/index.djt',{'user':u})
 	else:
+		print(request.method)
 		return render(request,'Login/signin.djt',None)	
 
 def signup(request):
+	print("PLAKJSBK")
+	print(request.method)
 	if request.method=='POST':
 		username = request.POST['username']
 		password = request.POST['password']
